@@ -41,7 +41,26 @@ After working with the data, we worked through the general solution pipelines on
 Let's look at the individual LSTM used in more detail. The layers of the keras Sequential model are LSTMs with a given number of neurons and the Dense layer. The prediction horizon, number of train epochs and number of LSTM layer neurons are set as tuned parameters. This simple structure allows to obtain sufficiently good predictions without taking up much RAM space.
 ![Слайд7](https://user-images.githubusercontent.com/33491221/218243341-ee6298f3-a485-424b-8bdd-112e813bd90f.JPG)
 
+After tuning the process, the best values of the hyperparameters were obtained, as shown on the slide. With these parameters it was possible to achieve a test metric of 1.0909.
+![Слайд8](https://user-images.githubusercontent.com/33491221/218243534-2b8a12d7-e421-4d39-9c2f-8135e8b981db.JPG)
 
+The current slide shows the error estimates of the obtained predictions for each of the geographic points presented in the test dataset.
+![Слайд9](https://user-images.githubusercontent.com/33491221/218243628-2573f6d9-e141-4248-8f81-d18798448bb5.JPG)
 
+Next on the slide is an example for predictions in a specific location, namely the Lakhta Center area. On the graph comparing the test and predicted data you can see that LSTM manages to catch the periodic pattern of time series.
+![Слайд10](https://user-images.githubusercontent.com/33491221/218243678-9b64e73b-55bd-4e36-b66b-3d8a78a000d1.JPG)
 
+Here is another example in which the model was able to capture the pattern of time series for a geographic point near a subway station and a large shopping mall. 
+![Слайд11](https://user-images.githubusercontent.com/33491221/218243782-4dfe6f22-caa5-46e4-b962-752044896783.JPG)
 
+The following is a heat map of predictions by geographic points with target values as weights.
+![Слайд12](https://user-images.githubusercontent.com/33491221/218243853-b3a9dc80-866f-47aa-b46a-0b427aa40a2c.JPG)
+
+In this example, you can see by the color that the highlighted point has atypically many publications on the current day, even though it is located quite far from the center. As it turned out, there was a concert of a music band at the Ice Palace on that day.
+![Слайд13](https://user-images.githubusercontent.com/33491221/218243907-056562fa-9398-4230-8403-b06c2d1458ec.JPG)
+
+Here we also see high activity at two points away from the center. In the first case, this can be explained by the opening of several exhibitions in the gallery. In the second case, activity was probably taking place at the ice rink near the bay.
+![Слайд14](https://user-images.githubusercontent.com/33491221/218244075-f6f291a6-0a1e-479a-8a0a-2fd504c9babf.JPG)
+
+Finally, the slide shows individual predictions versus target values. It can be seen that the continuous predictions are fairly close to the discrete target points, indicating the quality of the developed system.
+![Слайд15](https://user-images.githubusercontent.com/33491221/218244169-7570e147-8485-4694-8515-0b642e03d517.JPG)
